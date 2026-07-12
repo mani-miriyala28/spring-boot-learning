@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="/Profiles (snapshot).java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="/Profiles (snapshot).java" />
+              <option name="originalContent" value="package com.mani.learning;&#10;&#10;import jakarta.annotation.PostConstruct;&#10;import org.springframework.beans.factory.annotation.Value;&#10;import org.springframework.stereotype.Component;&#10;&#10;@Component&#10;&#10;public class Profiles {&#10;&#10;    @Value(&quot;${username}&quot;)&#10;    private String userName;&#10;&#10;    @Value(&quot;${password}&quot;)&#10;    private String password;&#10;&#10;    public Profiles() {&#10;        System.out.println(&quot;Profiles bean is created&quot;);&#10;    }&#10;&#10;    @PostConstruct&#10;    public void init(){&#10;        System.out.println(&quot;Profiles bean is initialized&quot;);&#10;        System.out.println(&quot;username: &quot; + userName);&#10;        System.out.println(&quot;password: &quot; + password);&#10;    }&#10;}&#10;" />
+              <option name="updatedContent" value="package com.mani.learning;&#10;&#10;import jakarta.annotation.PostConstruct;&#10;import org.springframework.beans.factory.annotation.Value;&#10;import org.springframework.core.env.Environment;&#10;import org.springframework.stereotype.Component;&#10;&#10;@Component&#10;&#10;public class Profiles {&#10;&#10;    @Value(&quot;${username}&quot;)&#10;    private String userName;&#10;&#10;    @Value(&quot;${password}&quot;)&#10;    private String password;&#10;&#10;    private final Environment environment;&#10;&#10;    public Profiles(Environment environment) {&#10;        System.out.println(&quot;Profiles bean is created&quot;);&#10;        this.environment = environment;&#10;    }&#10;&#10;    @PostConstruct&#10;    public void init(){&#10;        System.out.println(&quot;Profiles bean is initialized&quot;);&#10;        System.out.println(&quot;username: &quot; + userName);&#10;        System.out.println(&quot;password: &quot; + password);&#10;        System.out.println(&quot;\n=== DEBUG INFO ===&quot;);&#10;        System.out.println(&quot;Active Profiles: &quot; + java.util.Arrays.toString(environment.getActiveProfiles()));&#10;        System.out.println(&quot;OS USERNAME env var: &quot; + System.getenv(&quot;USERNAME&quot;));&#10;        System.out.println(&quot;username property from environment: &quot; + environment.getProperty(&quot;username&quot;));&#10;        System.out.println(&quot;==================\n&quot;);&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
