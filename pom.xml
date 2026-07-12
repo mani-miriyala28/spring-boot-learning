@@ -1,0 +1,12 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.mani.learning</groupId>
+<artifactId>spring-learning-workspace</artifactId>
+<version>1.0.0</version>
+<packaging>pom</packaging>
+<modules>
+<module>conditional-on-property</module>
+<module>spring-jpa</module>
+<module>spring-profiles</module>
+</modules>
+</project>
