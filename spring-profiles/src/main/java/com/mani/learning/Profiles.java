@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 
 public class Profiles {
 
-    @Value("${username}")
+    @Value("${db-username}")
     private String userName;
 
-    @Value("${password}")
+    @Value("${db-password}")
     private String password;
 
     private final Environment environment;
@@ -30,7 +30,8 @@ public class Profiles {
         System.out.println("\n=== DEBUG INFO ===");
         System.out.println("Active Profiles: " + java.util.Arrays.toString(environment.getActiveProfiles()));
         System.out.println("OS USERNAME env var: " + System.getenv("USERNAME"));
-        System.out.println("username property from environment: " + environment.getProperty("username"));
+        System.out.println("username property from environment: " + environment.getProperty("db-username"));
+        System.out.println("password property from environment: " + environment.getProperty("db-password"));
         System.out.println("==================\n");
     }
 }
